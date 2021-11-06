@@ -1,5 +1,6 @@
 <?php 
-    include connect.php 
+    require 'config/connect.php';
+    
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +33,9 @@
                             </div>
                             <div class="form-outline mb-4">
                                 <input class="btn btn-primary btn-lg" type="submit" value="Login" style="width:100%;" >
+                            </div>
+                            <div class="form-outline mb-4">
+                                <p><a class="rndlink" href="views/usuarios/form.php">cadastrar-se</a></p>
                             </div>
                         </div>
                      </div>
