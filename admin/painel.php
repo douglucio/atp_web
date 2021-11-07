@@ -1,5 +1,9 @@
 <?php
  session_start();
+
+ if (!isset($_SESSION['usuarioId'])) header("Location: ../index.php");
+    exit; // Encerra a execução do script
+
  echo "Logado como ".$_SESSION['usuarioNome'];
  echo "<br><a href='../views/usuarios/deslogar.php'>Sair</a>";
 ?>
