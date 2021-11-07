@@ -1,3 +1,8 @@
+<?php
+ if(!$_SESSION['usuarioNome']){
+     echo "Acesso negado! ".$_SESSION['usuarioNome'];
+ };
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
