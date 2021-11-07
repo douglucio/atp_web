@@ -1,7 +1,7 @@
 <?php
- if(!$_SESSION['usuarioNome']){
-     echo "Acesso negado! ".$_SESSION['usuarioNome'];
- };
+ session_start();
+ echo "Logado como ".$_SESSION['usuarioNome'];
+ echo "<br><a href='../views/usuarios/deslogar.php'>Sair</a>";
 ?>
 <!DOCTYPE html>
 <html lang="en">

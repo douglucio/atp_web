@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>Consultar Usuarios</title>
+    <title>Buscar Usuarios</title>
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5 text-center">Lista de Usuários</h1>
+        <h1 class="mt-5 text-center">Busca de Usuários</h1>
         <form action="buscar.php" method="post">
         <div class="input-group mb-3 mt-3">
             <input type="text" class="form-control" name="buscar" placeholder="buscar pelo nome ou email" aria-label="Recipient's username" aria-describedby="button-addon2" required>
@@ -22,7 +22,8 @@
     <?php
 
     require '../../config/connect.php';
-    $sql = "SELECT * FROM usuarios";
+    $busca = $_POST['buscar'];
+    $sql = "SELECT * FROM usuarios WHERE nome like '%$busca%' or email like '%$busca%';";
     $result = mysqli_query($mysqli, $sql);
     $total = mysqli_num_rows($result);
 
@@ -51,7 +52,7 @@
         echo "</tbody>";
         echo "</table>";
     } else {
-        echo "Não encontramos dados para essa consulta";
+        echo "não foram";
     }
     ?>
     </div>

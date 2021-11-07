@@ -16,18 +16,9 @@
             $_SESSION['usuarioNome'] = $resultado['nome'];
             $_SESSION['usuarioNiveisAcessoId'] = $resultado['perfil'];
             $_SESSION['usuarioEmail'] = $resultado['email'];
-            if($_SESSION['usuarioNiveisAcessoId'] == "1"){
-                echo "Logou admin ".$_SESSION['usuarioNome'];
-                //header("Location: administrativo.php");
-                echo "<a href='deslogar.php'>sair</a>";
-            }elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
-                echo "Logou Fora do range".$_SESSION['usuarioNome'];
-                //header("Location: colaborador.php");
-            }else{
-                echo "Logou usuario".$_SESSION['usuarioNome'];
-                //header("Location: cliente.php");
-                echo "<a href='deslogar.php'>sair</a>";
-            }
+                
+            header("Location: ../../admin/painel.php");
+            
         }else{    
             //Váriavel global recebendo a mensagem de erro
             $_SESSION['loginErro'] = "Usuário ou senha Inválido";
