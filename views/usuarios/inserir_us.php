@@ -42,10 +42,10 @@ if (mysqli_query($mysqli, $sql)) {
     echo "<div class='m-0 vh-100 row justify-content-center align-items-center'>";
     echo "<div class='col-auto card p-5 text-center'>";
     echo "<div class='card-header'>";
-    echo "<i class='material-icons' style='color:green; align: center;'>error</i>";
+    echo "<i class='material-icons' style='color:red; align: center;'>error</i>";
     echo "</div>";
     echo "<div class='card-body'>";
-    echo "<h5 class='card-title'>Usuário cadastrado com sucesso!</h5>";
+    echo "<h5 class='card-title'>Usuário não cadastrado!</h5>";
     echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
     echo "<a href='../../index.php' class='btn btn-primary'>Ir para login</a>";
     echo "</div>";

@@ -28,11 +28,7 @@ if ($total > 0) {
         $perfil = $value['perfil'];
     }
 
-    if ($perfil === 0) {
-        $desc_perfil = "Usuário";
-    }else {
-        $desc_perfil = "Administrador";
-    }
+   
     
     echo "<div class='container'>";
     echo "<h1 class='text-center mt-5' >Editar Cadastro de Usuarios</h1>";
