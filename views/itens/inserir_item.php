@@ -63,7 +63,7 @@
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>Item cadastrado com sucesso!</h5>";
                 echo "<p class='card-text'>".$nome."<br>".$destino."</p>";
-                echo "<a href='listar_item.php' class='btn btn-primary'>Ir para listagem</a>";
+                echo "<a href='../../admin/painel.php' class='btn btn-primary'>Ir para listagem</a>";
                 echo "</div>";
                 echo "<div class='card-footer text-muted'>";
                 echo "<h4>Emprestar <i class='material-icons' style='color:red;'>compare_arrows</i> Devolver</h4>";

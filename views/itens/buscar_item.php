@@ -1,7 +1,7 @@
 <?php
  session_start();
 
- require '../config/connect.php';
+ require '../../config/connect.php';
 
  if (!isset($_SESSION['usuarioId']) ) header("Location: ../index.php");
    
@@ -29,10 +29,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="painel.php">Meus Itens</a>
+          <a class="nav-link active" aria-current="page" href="../../admin/painel.php">Meus Itens</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../views/itens/itens_disp.php">Itens Disponiveis</a>
+          <a class="nav-link active" aria-current="page" href="./itens_disp.php">Itens Disponiveis</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Meus Emprestimos</a>
@@ -61,8 +61,8 @@
   </div>
 </nav>
 <div class="container">
-        <h3 class="text-center">Meus Itens</h3>
-        <form action="../views/itens/buscar_item.php" method="post">
+        <h3 class="text-center">Resultado da Busca</h3>
+        <form action="buscar_item.php" method="post">
         <div class="input-group mb-3 mt-3">
             <input type="text" class="form-control" name="buscar" placeholder="buscar pelo nome do item" aria-label="Recipient's username" aria-describedby="button-addon2" required>
             <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
@@ -70,9 +70,11 @@
     </form>
     
     <button type="button" class="btn btn-success"><a class="rndlink text-white" href="../views/itens/form_item.php"><b>+</b> new item</a></button>
+    
     <?php
 
-    $sql = "SELECT id_iten, img_iten, nome_iten,us.nome,sit_iten FROM itens INNER JOIN usuarios us ON itens.cod_usuario = us.id WHERE us.id =  ".$_SESSION['usuarioId'];
+    $busca = $_POST['buscar'];
+    $sql = "SELECT id_iten, img_iten, nome_iten,us.nome,sit_iten FROM itens INNER JOIN usuarios us ON itens.cod_usuario = us.id WHERE us.id =  ".$_SESSION['usuarioId']." AND nome_iten like '%$busca%'";
     $result = mysqli_query($mysqli, $sql);
     $total = mysqli_num_rows($result);
 
@@ -81,7 +83,7 @@
         echo "<table class='table table-sm' id='table'>";
         echo "<thead>";
             echo "<tr>";
-                echo "<th scope='col'> imagem </th>";
+                echo "<th scope='col'> Imagem </th>";
                 echo "<th scope='col'> Nome </th>";
                 echo "<th scope='col'> Proprietario </th>";
                 echo "<th scope='col'> Situação </th>";
@@ -89,23 +91,24 @@
             echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
+        
         foreach ($result as $value) {
             echo "<tr>";
-                echo "<td><img src=../views/itens/".$value['img_iten']." height='30' width='40'></td>";
+                echo "<td><img src=./".$value['img_iten']." height='30' width='40'></td>";
                 echo "<td>".$value['nome_iten']."</td>";
                 echo "<td>".$value['nome']."</td>";
                 if ($value['sit_iten'] === "0") {
-                  echo "<td>Disponivel</td>";
-                } else {
-                  echo "<td>Emprestado</td>";
-                }
-                echo "<td><div class='row'><div class='col'><a href='../views/itens/delete_item.php?id=".$value['id_iten']."'> <i class='material-icons' style='color:red;' title='excluir'>delete</i></a></div><div class='col'><a href='../views/itens/editar_item.php?id=".$value['id_iten']."'> <i class='material-icons' style='color:blue;'title='editar'>edit</i></a></div></div></td>";
+                    echo "<td>Disponivel</td>";
+                  } else {
+                    echo "<td>Emprestado</td>";
+                  }
+                echo "<td><div class='row'><div class='col'><a href='delete.php?id=".$value['id_iten']."'> <i class='material-icons' style='color:red;'>delete</i></a></div><div class='col'><a href='editar.php?id=".$value['id_iten']."'> <i class='material-icons' style='color:green;'>edit</i></a></div></div></td>";
             echo "</tr>";
-          }
+        }
         echo "</tbody>";
         echo "</table>";
     } else {
-        echo "Não encontramos dados para essa consulta";
+        echo "não foram";
     }
     ?>
     </div>
