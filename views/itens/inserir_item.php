@@ -79,12 +79,18 @@
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'Item não cadastrado!</h5>";
                 echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
-                echo "<a href='listar_item.php' class='btn btn-primary'>Ir para login</a>";
+                if (@unlink($destino)) {
+                    echo "<br>" . $destino . " foi excluido";
+                }
+                echo "<a href='../../admin/painel.php' class='btn btn-primary'>Voltar para Painel</a>";
                 echo "</div>";
                 echo "<div class='card-footer text-muted'>";
                 echo "<h4>Emprestar <i class='material-icons' style='color:red;'>compare_arrows</i> Devolver</h4>";
                 echo "</div>";
                 echo "</div>";
+
+                
+
             }
     
             mysqli_close($mysqli);

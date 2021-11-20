@@ -3,7 +3,7 @@
 
  require '../../config/connect.php';
 
- if (!isset($_SESSION['usuarioId']) ) header("Location: ../index.php");
+ if (!isset($_SESSION['usuarioId']) ) header("Location: ../../index.php ");
    
 
 ?>
@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Itens Disponiveis</title>
+    <title>Painel Administrativo</title>
 </head>
 <body>
 <?php
-    require "../../layouts/nav.php";
+    require "../../layouts/nav.php"
 ?>
 <div class="container">
-        <h3 class="text-center">Itens Disponiveis para Empréstimo</h3>
+        <h3 class="text-center">Itens Disponiveis para emprestimo</h3>
         <form action="buscar_item.php" method="post">
         <div class="input-group mb-3 mt-3">
             <input type="text" class="form-control" name="buscar" placeholder="buscar pelo nome do item" aria-label="Recipient's username" aria-describedby="button-addon2" required>
