@@ -1,3 +1,7 @@
+
+<?php
+    define("ROOT", dirname(__FILE__));
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Emprestar <i class="material-icons" style="color:red;">compare_arrows</i> Devolver</a>
@@ -7,13 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../admin/painel.php">Meus Itens</a>
+          <a class="nav-link active" aria-current="page" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/admin/painel.php">Meus Itens</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../views/itens/itens_disp.php">Itens Disponiveis</a>
+          <a class="nav-link active" aria-current="page" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/views/itens/itens_disp.php">Itens Disponiveis</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../views//emprestimos/emp_rel.php">Meus Emprestimos</a>
+          <a class="nav-link active" aria-current="page" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/views/emprestimos/emp_rel.php">Meus Emprestimos</a>
         </li>
        <?php 
 
@@ -32,7 +36,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="../views/usuarios/deslogar.php">Logout</a>
+          <a class="nav-link " aria-current="page" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/views/usuarios/deslogar.php">Logout</a>
         </li>
       </ul>
     </div>

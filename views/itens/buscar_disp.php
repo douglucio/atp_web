@@ -37,7 +37,7 @@
     <?php
 
     $busca = $_POST['buscar'];
-    $sql = "SELECT id_iten, img_iten, nome_iten,us.nome,sit_iten FROM itens INNER JOIN usuarios us ON itens.cod_usuario = us.id WHERE us.id =  ".$_SESSION['usuarioId']." AND nome_iten like '%$busca%'";
+    $sql = "SELECT id_iten, img_iten, nome_iten,us.nome,sit_iten FROM itens INNER JOIN usuarios us ON itens.cod_usuario = us.id WHERE us.id !=  ".$_SESSION['usuarioId']." AND sit_iten = 0 AND nome_iten like '%$busca%'";
     $result = mysqli_query($mysqli, $sql);
     $total = mysqli_num_rows($result);
 

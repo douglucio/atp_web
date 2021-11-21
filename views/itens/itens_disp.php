@@ -25,7 +25,7 @@
 ?>
 <div class="container">
         <h3 class="text-center">Itens Disponiveis para Empréstimo</h3>
-        <form action="buscar_item.php" method="post">
+        <form action="buscar_disp.php" method="post">
         <div class="input-group mb-3 mt-3">
             <input type="text" class="form-control" name="buscar" placeholder="buscar pelo nome do item" aria-label="Recipient's username" aria-describedby="button-addon2" required>
             <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
