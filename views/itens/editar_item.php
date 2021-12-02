@@ -52,16 +52,16 @@ if ($total > 0) {
                 
     echo "</div>";
     echo "<div class='mb-3'>";
-    echo "<label for='desc_item' class='form-label'>Email</label>";
+    echo "<label for='desc_item' class='form-label'>Descrição</label>";
     echo "<input type='text' class='form-control' id='desc_item' name='desc_item' value='$desc'>";
                 
     echo "</div>";
     echo "<div class='mb-3'>";
-    echo "<label for='arquivo' class='form-label'>Senha</label>";
+    echo "<label for='arquivo' class='form-label'>Imagem</label>";
     echo "<input type='file' class='form-control' id='arquivo' name='arquivo' value='$img' disabled>";
     echo "</div>";
     echo "<div class='mb-3'>";
-    echo "<label for='cod_us' class='form-label'>Perfil</label>";
+    echo "<label for='cod_us' class='form-label'>Proprietario</label>";
     echo "<input type='text' class='form-control' id='cod_us' name='cod_us' value='$cod_us' disabled>";
     echo "</div>";
     

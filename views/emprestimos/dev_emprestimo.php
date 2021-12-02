@@ -38,7 +38,7 @@
         }
 
         $sql = "UPDATE emprestimos SET data_dev = current_timestamp() WHERE id_emp = $id;";
-        $abc = "UPDATE itens SET sit_iten = 0 WHERE id_iten = $item";
+        $abc = "UPDATE itens SET sit_iten = 0 WHERE id_iten = ".$item;
 
         if (mysqli_query($mysqli, $sql)) {
 
@@ -52,7 +52,7 @@
             echo "<div class='card-body'>";
             echo "<h5 class='card-title'>Item devolvido  com sucesso!</h5>";
             echo "<p class='card-text'>".$item."  </p>";
-            echo "<a href='../emprestimos/emp_rel.php' class='btn btn-primary'>Ir para itens disponiveis</a>";
+            echo "<a href='../itens/itens_disp.php' class='btn btn-primary'>Ir para itens disponiveis</a>";
             echo "</div>";
             echo "<div class='card-footer text-muted'>";
             echo "<h4>Emprestar <i class='material-icons' style='color:red;'>compare_arrows</i> Devolver</h4>";
@@ -69,7 +69,7 @@
         echo "<div class='card-body'>";
         echo "<h5 class='card-title'>Emprestimo não encontrado</h5>";
         echo "Error: 593 - ID ".$id." não encontrado<br>" ;
-        echo "<br><a href='../emprestimos/emp_rel.php' class='btn btn-primary'>Ir para listagem</a>";
+        echo "<br><a href='../itens/itens_disp.php' class='btn btn-primary'>Ir para itens disponiveis</a>";
         echo "</div>";
         echo "<div class='card-footer text-muted'>";
         echo "<h4>Emprestar <i class='material-icons' style='color:red;'>compare_arrows</i> Devolver</h4>";

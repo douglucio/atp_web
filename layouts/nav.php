@@ -20,14 +20,14 @@
           <a class="nav-link active" aria-current="page" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/views/emprestimos/emp_rel.php">Meus Emprestimos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/views/emprestimos/emp_rel.php">Relatorios</a>
+          <a class="nav-link active" aria-current="page" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/views/relatorios/list_rel.php">Relatorios</a>
         </li>
 
        <?php 
         $url = $_SERVER['DOCUMENT_ROOT'];
         if ($_SESSION['usuarioNiveisAcessoId'] > 0) {
             echo "<li class='nav-item'>";
-            echo "<a class='nav-link active' aria-current='page' href='".$url."/views/usuarios/consulta.php'>Usuarios</a>";
+            echo "<a class='nav-link active' aria-current='page' href='../views/usuarios/consulta.php'>Usuarios</a>";
             echo "</li>";
         }
        
